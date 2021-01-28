@@ -1,0 +1,30 @@
+{
+  "name": "coding-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-tests": "npx yarn install && npm run build && npm run test",
+    "develop-tests": "npx yarn install && concurrently \"npm run build-watch\" \"npm run test\"",
+    "test": "mocha --watch --reporter min testing/tests/**/*.test.js",
+    "build-watch": "tsc -p ./testing/tsconfig.json --watch",
+    "build": "tsc -p ./testing/tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
+  },
+  "devDependencies": {
+    "@types/acorn": "^4.0.5",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.9.3",
+    "acorn": "^7.1.1",
+    "acorn-walk": "^7.1.1",
+    "concurrently": "^5.1.0",
+    "typescript": "^3.8.3"
+  }
+}
